@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+requests
+pyperclip
+python-dotenv
+pydub
+moviepy
