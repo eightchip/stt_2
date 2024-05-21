@@ -197,7 +197,7 @@ def start_backend():
 
 def recognize_audio(api_key, file_path, logging_opt_out, min_speaker, max_speaker, grammar_file, profile_id):
     file_path = handle_audio_file(file_path)  # ここで適切な変換を行う
-    url = "http://127.0.0.1:8000/recognize/"
+    url = "https://stt-2.vercel.app/"
     files = {'file': open(file_path, 'rb')}
     data = {
         'app_key': api_key,
@@ -220,7 +220,7 @@ def recognize_audio(api_key, file_path, logging_opt_out, min_speaker, max_speake
         result_text.set("Failed: " + str(response.status_code) + " " + response.text)
 
 def check_completion(api_key, sessionid, file_path):
-    url = f"http://127.0.0.1:8000/status/{sessionid}?app_key={api_key}"
+    url = f"https://stt-2.vercel.app/status/{sessionid}?app_key={api_key}"
     while True:
         response = requests.get(url)
         if response.status_code == 200:
